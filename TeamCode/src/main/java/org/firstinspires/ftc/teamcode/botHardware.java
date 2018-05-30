@@ -25,7 +25,7 @@ public class botHardware {
     Servo TL = null;
     Servo BR = null;
     Servo TR = null;
-    Servo s = null;
+
 
     ColorSensor colSensor = null;
 
@@ -55,13 +55,13 @@ public class botHardware {
         BR = hwdmap.servo.get("br");
         TR = hwdmap.servo.get("tr");
         colSensor = hwdmap.colorSensor.get("colSensor");
-        s = hwdmap.servo.get("s");
 
         motor0.setPower(0);
         motor1.setPower(0);
         motor2.setPower(0);
         motor3.setPower(0);
         arm.setPower(0);
+        jewelServo.setPosition(1);
 
 
 

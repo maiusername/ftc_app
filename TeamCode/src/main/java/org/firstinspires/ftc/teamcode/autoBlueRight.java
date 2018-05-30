@@ -45,7 +45,7 @@ public class autoBlueRight extends LinearOpMode {
         //move jewelServo to the middle
         runtime.reset();
         while (opModeIsActive() && runtime.seconds() < 1) {
-            robot.jewelServo.setPosition(.45);
+            robot.jewelServo.setPosition(.5);
             robot.arm.setPower(.2);
 
 
@@ -74,7 +74,7 @@ public class autoBlueRight extends LinearOpMode {
 
             mintime.reset();
             while (count != 1) {
-                while (mintime.seconds() < 3 && (robot.colSensor.blue() < 80 || robot.colSensor.red() < 80)) {
+                while (mintime.seconds() < 3 && (robot.colSensor.blue() < 40 || robot.colSensor.red() < 40)) {
                     robot.motor0.setPower(.15);
                     robot.motor1.setPower(.15);
                     robot.motor2.setPower(-.15);
@@ -91,16 +91,16 @@ public class autoBlueRight extends LinearOpMode {
             robot.motor3.setPower(0);
 
             // color sensor looking for red
-           if (robot.colSensor.red() > robot.colSensor.blue() + 20) {  // if sees red then turn to red ball
+           if (robot.colSensor.red() > robot.colSensor.blue() ) {  // if sees red then turn to red ball
 
                 robot.jewelServo.setPosition(-1);
-               telemetry.addLine("red");
+
             }
 
-            else if (robot.colSensor.blue() > robot.colSensor.red() + 20) { //if sees blue then turn to the red ball
+            else if (robot.colSensor.blue() > robot.colSensor.red() ) { //if sees blue then turn to the red ball
 
                 robot.jewelServo.setPosition(1);
-                telemetry.addLine("blue");
+
             }
 
 
@@ -125,8 +125,10 @@ public class autoBlueRight extends LinearOpMode {
             while (opModeIsActive() && runtime.seconds() < 1.5) {
                 robot.motor0.setPower(-1);
                 robot.motor1.setPower(1);
-                robot.motor2.setPower(1);
-                robot.motor3.setPower(-1);
+                robot.motor2.setPower(-1);
+                robot.motor3.setPower(1);
+
+                robot.jewelServo.setPosition(1);
 
             }
 

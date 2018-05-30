@@ -10,29 +10,29 @@ import com.qualcomm.robotcore.hardware.Servo;
  *
  * negative values don't work for continuous rotation servos*************************
  */
-@TeleOp
+
 public class rotationServoTest extends LinearOpMode{
 
 
-   CRServo s;
+   Servo s;
 
     public void runOpMode(){
 
-        s = hardwareMap.crservo.get("s");
+        s = hardwareMap.servo.get("s");
 
         waitForStart();
 
         while(opModeIsActive()) {
 
 
-            if (gamepad1.a == true) {
-              
-            } else if (gamepad1.b == true) { // to the right
-                s.setPower(1);
-            } else if (gamepad1.x == true) { //
-                s.setPower(-1);
-            } else if (gamepad1.y == true) {
-                s.setPower(-2);
+            if (gamepad1.a == true) {//right
+                s.setPosition(1);
+            } else if (gamepad1.b == true) { // to the left
+                s.setPosition(-1);
+            } else if (gamepad1.x == true) {
+                s.setPosition(.4);
+            } else if (gamepad1.y == true) { //.5!!
+                s.setPosition(.5);
             }
 
 

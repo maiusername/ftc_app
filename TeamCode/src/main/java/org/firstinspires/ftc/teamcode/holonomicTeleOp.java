@@ -44,19 +44,7 @@ public class holonomicTeleOp extends LinearOpMode{
          */
         while (opModeIsActive()) {
 
-            /**
-             * ORIGINAL
 
-            float gamepad1LeftX = gamepad1.left_stick_x;
-            float gamepad1LeftY = gamepad1.left_stick_y;
-            float gamepad1RightX = gamepad1.right_stick_x;
-
-            float frontL = -gamepad1LeftX + gamepad1LeftY + gamepad1RightX;
-            float frontR = gamepad1LeftX - gamepad1LeftY - gamepad1RightX;
-            float backL = gamepad1LeftX + gamepad1LeftY - gamepad1RightX;
-            float backR = -gamepad1LeftX - gamepad1LeftY - gamepad1RightX;
-
-             */
 
             /**
              * Assign variables to controller
@@ -86,6 +74,8 @@ public class holonomicTeleOp extends LinearOpMode{
             robot.motor1.setPower(frontR);
             robot.motor2.setPower(backL);
             robot.motor3.setPower(backR);
+
+
 
 
 
